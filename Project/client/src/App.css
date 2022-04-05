@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+  font-size: 25px;
+  position: auto;
+}
+
+label {
+  display: inline-block;
+  position: absolute;
+  left: 39%;
+  margin-top: -6px; 
+  font-size: 20px;
+  font-weight: bold;
+
+  /* width: 340px; */
+}
+
+.forms {
+  display: block;
+  background-color: rgb(232, 232, 232);
+  position: left;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+form{
+  display: absolute;
+  position: center;
+}
+input {
+  display: inline-block;
+  position: center;
+  font-size: 25px;
+  /*font-weight: bold*/;
+  align-content: auto;
+  justify-content: auto;
+
+  width: 75%;
+  height: 34px;
+  margin: 25px;
+  font-size: 19px;
+} 
+
+select{
+  width: 78%;
+  height: 36px;
+  margin: 25px;
+  font-size: 20px;  
+}
+.form{
+  font-size: 50px ;
+}
+
+.button{
+  width: 75%;
+  height: 35px;
+  margin: 20px;
+  font-size: 23px;
+}
+
+body {
+  padding: 10px;
+  /* text-align: left; */
+}
+
+Table {
+  width: 100%;
+ 
+  table-layout: auto;
+  background-color: #eee;
+  table-layout: auto;
+  justify-content: center;
+  align-content: center;
+
+  position: center;
+  margin-top: 50px;
+
+}
+.fixed {
+  table-layout: absolute;
+}
+
+table, td, th {
+  border-collapse: collapse;
+  font-size: 20px;
+  word-wrap:break-word;
+
+}
+
+th, td {
+  border: solid 1px;
+  text-align: center;
+  justify-content: center;
+  word-wrap: break-word;
+
+}
+
+th {
+  padding: 10px;
+  word-wrap:break-word;
+}
+
+.Table input{
+  width: 75%;
+  height: 20px;
+  font-size: 18px;
+  position: center;
+  margin: 5px;
+  word-wrap: break-word;
+}
+
+.button2{
+  width: 88%;
+  height: 20px;
+  margin: 5px;
+  font-size: 15px;
+}
