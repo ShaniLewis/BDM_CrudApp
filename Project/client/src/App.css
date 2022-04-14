@@ -44,8 +44,8 @@ input {
 select{
   width: 78%;
   height: 36px;
-  margin: 25px;
-  font-size: 20px;  
+  margin: 30px;
+  font-size: 18px;  
 }
 .form{
   font-size: 50px ;
@@ -92,12 +92,14 @@ th, td {
   text-align: center;
   justify-content: center;
   word-wrap: break-word;
-
 }
 
 th {
   padding: 10px;
-  word-wrap:break-word;
+}
+
+td{
+  margin: 5px;
 }
 
 .Table input{

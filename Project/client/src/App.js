@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() =>{
     Axios.get('http://localhost:3001/api/get').then((response)=>{
-    setDonorList(response.data)
+      setDonorList(response.data);
     });
   }, []);
 
@@ -44,18 +44,19 @@ function App() {
         DonationType: DonationType,
         LastDonationDate: LastDonationDate,
         LastDonationType: LastDonationType,
-      }).then(() =>{ 
+      }).then(() => { 
         setDonorList([
         ...DonorList, {SSN: SSN, Name: Name, Phone: Phone, City: City, State_Abbr: State, Blood_Type: BloodType, Donation_Type_ID: DonationType, Last_Donation_Date: LastDonationDate, Last_Donation_Type: LastDonationType
         }, 
-      ]);
+        ]);
       });
+      window.location.reload();
     };
 
 
     const Delete = (log_ID) => {
       Axios.delete(`http://localhost:3001/api/delete/${log_ID}`)
-
+      window.location.reload();
     };
 
     const Update = (log_ID, item) => {
@@ -71,8 +72,9 @@ function App() {
       DonationType: newDT,
       LastDonationDate: newLDD,
       LastDonationType: newLDT,
-  });
-          };
+        });
+        window.location.reload();
+  }; 
       
     return(
     <div className="App">
@@ -96,7 +98,7 @@ function App() {
 
           <form>
         <label className = "label" for="floatingNumber">Phone Number</label>
-        <input name = "Phone" class="form-control" id="floatingNumber" placeholder="(123)-456-789" onChange={(e) => {
+        <input name = "Phone" class="form-control" id="floatingNumber" placeholder="(123)-456-7890" onChange={(e) => {
           setPhone(e.target.value)}}/>
         </form>
 
@@ -211,12 +213,11 @@ function App() {
       <input className = "other" type = "date" name = "LastDonationDate" class="form-control" id="floatingNumber" placeholder="MM-DD-YYYY" min="1997-01-01" max="2030-12-31" onChange={(e) => {
           setLastDonationDate(e.target.value)}}/>
     </form>
+              <button type = "submit" className="button" onClick={Submit} > Submit</button>
 
-      <button className = "button" onClick={Submit}> Submit</button>
-     
-     </forms>
+    </forms>
+
      </div>
-
       <div className = "Table">
 
         <table>
@@ -266,8 +267,10 @@ function App() {
     <td>{val.Last_Donation_Type} <input type="text" name="LastDonationType" onChange={(e) => {
           setNewLDT(e.target.value)}}></input></td>
  
-              <td><button className = "button2" onClick={()=>{Update(val.log_ID)}}>Update</button>
-              <button className = "button2" onClick={()=>{Delete(val.log_ID)}}>Delete</button> </td>
+                <td>
+                  <button className="button2" onClick={() => { Update(val.log_ID)}}>Update</button>
+                  <button className="button2" onClick={() => { Delete(val.log_ID) }}>Delete</button>
+                </td>
               </tr>
               </tbody>
           );
